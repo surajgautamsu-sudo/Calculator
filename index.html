@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cool UI Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="blob blob--a"></div>
+    <div class="blob blob--b"></div>
+    <div class="blob blob--c"></div>
+  </div>
+
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="brand__text">CALC •</span>
+      </div>
+      <div class="meta">
+        <span class="pill" id="modePill">Standard</span>
+        <button class="ghost" id="toggleTheme" type="button" title="Toggle theme">
+          Theme
+        </button>
+      </div>
+    </header>
+
+    <section class="calculator" aria-label="Calculator">
+      <div class="display" role="region" aria-label="Display">
+        <div class="display__top">
+          <div class="tag" id="historyTag">Ready</div>
+          <div class="hint" id="hint">Try: 12 + 7 × 3</div>
+        </div>
+
+        <div class="display__main">
+          <div class="display__equation" id="equation">0</div>
+          <div class="display__result" id="result">0</div>
+        </div>
+
+        <div class="display__bottom">
+          <div class="kbdRow" aria-hidden="true">
+            <span class="kbd">Esc</span><span class="kbdLabel">Clear</span>
+            <span class="kbd">Enter</span><span class="kbdLabel">Equals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="keys" role="group" aria-label="Calculator keys">
+        <button class="key key--action" data-action="clear" type="button">AC</button>
+        <button class="key" data-action="backspace" type="button">⌫</button>
+        <button class="key" data-action="percent" type="button">%</button>
+        <button class="key key--op" data-op="/" type="button">÷</button>
+
+        <button class="key" data-digit="7" type="button">7</button>
+        <button class="key" data-digit="8" type="button">8</button>
+        <button class="key" data-digit="9" type="button">9</button>
+        <button class="key key--op" data-op="*" type="button">×</button>
+
+        <button class="key" data-digit="4" type="button">4</button>
+        <button class="key" data-digit="5" type="button">5</button>
+        <button class="key" data-digit="6" type="button">6</button>
+        <button class="key key--op" data-op="-" type="button">−</button>
+
+        <button class="key" data-digit="1" type="button">1</button>
+        <button class="key" data-digit="2" type="button">2</button>
+        <button class="key" data-digit="3" type="button">3</button>
+        <button class="key key--op" data-op="+" type="button">+</button>
+
+        <button class="key key--wide" data-action="sign" type="button">±</button>
+        <button class="key" data-digit="0" type="button">0</button>
+        <button class="key" data-action="dot" type="button">.</button>
+        <button class="key key--eq" data-action="equals" type="button">=</button>
+      </div>
+
+      <footer class="foot">
+        <span class="foot__left">Keyboard supported</span>
+        <span class="foot__right" id="status"> </span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
+
